@@ -1,0 +1,19 @@
+@import 'functions/helper';
+@import 'functions/selector-generator';
+
+// Class construct
+// .gutter-{type}-{multiplier}-{breakpoint}
+
+$gutter-helper--gutter: 30px;
+$gutter-helper--multiplier: (.5, 1);
+$gutter-helper--directions: ('a', 'y', 'x', 'top', 'right', 'bottom', 'left');
+$gutter-helper--breakpoints: (
+    'xs': 0,
+    'sm': 768px,
+    'md': 992px,
+    'lg': 1200px,
+);
+
+#{gutter-helper--selector-generator('padding', '', 2, 'xs')} {
+    padding: 30px;
+}
