@@ -1,0 +1,23 @@
+{
+  "name": "gutter-helper",
+  "homepage": "https://github.com/LoicGoyet/gutter-helper",
+  "authors": [
+    "Loïc Goyet <loic@appventus.com>"
+  ],
+  "description": "Gutter helper is a scss tool designer to quickly generate helpers classes for margin and padding.",
+  "main": "gutter-helper.scss",
+  "keywords": [
+    "scss",
+    "helpers",
+    "responsive",
+    "utilities"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

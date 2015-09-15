@@ -1,0 +1,41 @@
+@function gutter-helper--selector-generator--property($property: 'margin') {
+    @if $property == 'padding' {
+        @return '-' + 'p';
+    } @else {
+        @return '-' + 'm';
+    }
+}
+
+@function gutter-helper--selector-generator--direction($direction: '') {
+    @if $direction != '' {
+        @return '-' + $direction;
+    } @else {
+        @return '';
+    }
+}
+
+@function gutter-helper--selector-generator--multiplier($multiplier: 1) {
+    @if $multiplier != 1 {
+        $selector-multiplier: str-replace(inspect($multiplier), '.');
+        @return '-' + $selector-multiplier + 'x';
+    } @else {
+        @return '';
+    }
+}
+
+@function gutter-helper--selector-generator--breakpoint($breakpoint: '') {
+    @if $breakpoint != '' {
+        @return '-' + $breakpoint;
+    } @else {
+        @return '';
+    }
+}
+
+@function gutter-helper--selector-generator($property: 'margin', $direction: '', $multiplier: 1, $breakpoint: '') {
+    $selector: '.gutter';
+    $selector : $selector + gutter-helper--selector-generator--property($property);
+    $selector : $selector + gutter-helper--selector-generator--direction($direction);
+    $selector : $selector + gutter-helper--selector-generator--multiplier($multiplier);
+    $selector : $selector + gutter-helper--selector-generator--breakpoint($breakpoint);
+    @return $selector;
+}

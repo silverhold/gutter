@@ -1,0 +1,19 @@
+@function gutter-helper--rule-value($multiplier) {
+    @return round($gutter-helper--gutter * $multiplier);
+}
+
+@mixin gutter-helper--rules-generator($property: 'margin', $direction: '', $multiplier: 1, $breakpoint: '') {
+    @if $direction == 'a' {
+        #{$property}: gutter-helper--rule-value($multiplier);
+    } @elseif $direction == '' {
+        #{$property}: gutter-helper--rule-value($multiplier);
+    } @elseif $direction == 'y' {
+        #{$property}-top: gutter-helper--rule-value($multiplier);
+        #{$property}-bottom: gutter-helper--rule-value($multiplier);
+    } @elseif $direction == 'x' {
+        #{$property}-left: gutter-helper--rule-value($multiplier);
+        #{$property}-right: gutter-helper--rule-value($multiplier);
+    } @else {
+        #{$property}-#{$direction}: gutter-helper--rule-value($multiplier);
+    }
+}

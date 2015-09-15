@@ -1,0 +1,26 @@
+@import 'parameters';
+@import 'str-replace';
+@import 'selectors-generator';
+@import 'rules-generator';
+
+@mixin gutter-helper--generator($property: 'margin', $direction: '', $multiplier: 1, $breakpoint: '') {
+    #{gutter-helper--selector-generator($property, $direction, $multiplier, $breakpoint)} {
+        @include gutter-helper--rules-generator($property, $direction, $multiplier, $breakpoint);
+    }
+}
+
+@each $multiplier in $gutter-helper--multipliers {
+    @each $direction in $gutter-helper--directions {
+        @each $property in $gutter-helper--properties {
+            @each $breakpoint, $query in $gutter-helper--breakpoints {
+                @if $query == 0 {
+                    @include gutter-helper--generator($property, $direction, $multiplier, $breakpoint);
+                } @else {
+                    @media (min-width: $query) {
+                        @include gutter-helper--generator($property, $direction, $multiplier, $breakpoint);
+                    }
+                }
+            }
+        }
+    }
+}
