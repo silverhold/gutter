@@ -1,5 +1,5 @@
 @function gutter-helper--rule-value($multiplier) {
-    @return round($gutter-helper--gutter * $multiplier);
+    @return round($gutter-helper--gutter * $multiplier) !important;
 }
 
 @mixin gutter-helper--rules-generator($property: 'margin', $direction: '', $multiplier: 1, $breakpoint: '') {
