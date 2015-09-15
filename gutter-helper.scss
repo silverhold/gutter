@@ -9,9 +9,9 @@
     }
 }
 
-@each $multiplier in $gutter-helper--multiplier {
+@each $multiplier in $gutter-helper--multipliers {
     @each $direction in $gutter-helper--directions {
-        @each $property in ('margin', 'padding') {
+        @each $property in $gutter-helper--properties {
             @each $breakpoint, $query in $gutter-helper--breakpoints {
                 @if $query == 0 {
                     @include gutter-helper--generator($property, $direction, $multiplier, $breakpoint);
