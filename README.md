@@ -1,6 +1,11 @@
 # Gutter Helper
 Gutter helper is a scss tool designer to quickly generate helpers classes for margin and padding.
 
+## Get started
+Gutter helper is available via bower with the following command
+```
+  bower install gutter-helper
+```
 ## Concept
 Gutter Helper is based on one single value (the `$gutter-helper--gutter variable` located into the `_parameters.scss` file) declinated through multipliers, properties (`margin` and `padding`), directions and responsive breakpoints and compiled as css classes.
 
