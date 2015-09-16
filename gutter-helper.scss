@@ -15,6 +15,7 @@
             @each $breakpoint, $query in $gutter-helper--breakpoints {
                 @if $query == 0 {
                     @include gutter-helper--generator($property, $direction, $multiplier, $breakpoint);
+                    @include gutter-helper--generator($property, $direction, $multiplier, '');
                 } @else {
                     @media (min-width: $query) {
                         @include gutter-helper--generator($property, $direction, $multiplier, $breakpoint);
