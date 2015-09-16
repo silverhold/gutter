@@ -67,3 +67,4 @@ Some observation :
 * If you want to use an helper class with 1 as multiplier just don't put any mutliplier in your class name like `gutter-p-a`
 * If you want to use a decimal multiplier, remove the decimal point like `gutter-p-a-15x-xs`
 * If your decimal multiplier is less than 0, put a 0 in your class. For example a .5 mutlplier class must be `gutter-p-a-05x-xs`
+* You can not write any breakpoint descriminator in your helper class for avoid media queries like `gutter-p-a-15x`.
