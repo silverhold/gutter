@@ -28,7 +28,7 @@ $gutter-helper--multipliers: (.5, 1, 2) !default;
 ```
 
 #### `$gutter-helper--properties`
-A scss list that will regroup the kind of property that could be generated. The list can only contain 'margin' and/or 'padding'
+A scss list that will regroup the kind of property that could be generated. The list can only contain 'margin' and/or 'padding'. If you are using `px` units, the decimal for multiplied number will be rounded.
 ##### Default
 ```
 $gutter-helper--properties: ('margin', 'padding') !default;
