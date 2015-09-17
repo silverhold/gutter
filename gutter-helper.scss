@@ -10,19 +10,25 @@
     }
 }
 
+$index: 0;
 @each $multiplier in $gutter-helper--multipliers {
     @each $direction in $gutter-helper--directions {
         @each $property in $gutter-helper--properties {
             @each $breakpoint, $query in $gutter-helper--breakpoints {
                 @if $query == 0 {
                     @include gutter-helper--generator($property, $direction, $multiplier, $breakpoint);
+                    $index: $index + 1;
                     @include gutter-helper--generator($property, $direction, $multiplier, '');
+                    $index: $index + 1;
                 } @else {
                     @media (min-width: $query) {
                         @include gutter-helper--generator($property, $direction, $multiplier, $breakpoint);
+                        $index: $index + 1;
                     }
                 }
             }
         }
     }
 }
+
+@warn 'Gutter Helper generated #{$index} classes. Be aware of the amount of unsed kb of css that could be generated'
