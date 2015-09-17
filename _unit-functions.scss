@@ -59,7 +59,7 @@
 }
 
 @function gutter-helper--round-level($value) {
-    @if gutter-helper--detect-unit($value) == 'pixels' and gutter-helper--detect-unit($value) == 'points' {
+    @if gutter-helper--detect-unit($value) == 'pixels' {
         @return true;
     }
 
