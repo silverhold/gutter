@@ -1,3 +1,24 @@
+@function gutter-helper--get-unit($value, $length-checked) {
+    $string: inspect($value);
+    $string-length: str-length($string);
+    $string-end: str-slice($string, $string-length - ($length-checked - 1), $string-length);
+    @return $string-end;
+}
+
+@function gutter-helper--detect-unit($value) {
+    @if gutter-helper--get-unit($value, 2) == 'px' {
+        @return 'pixels';
+    } @elseif gutter-helper--get-unit($value, 2) == 'pt' {
+        @return 'points';
+    } @elseif gutter-helper--get-unit($value, 3) == 'rem' {
+        @return 'rem';
+    } @elseif gutter-helper--get-unit($value, 2) == 'em' {
+        @return 'em';
+    }
+}
+
+@debug gutter-helper--detect-unit($gutter-helper--gutter);
+
 @function gutter-helper--rule-value($multiplier) {
     @return round($gutter-helper--gutter * $multiplier) !important;
 }
