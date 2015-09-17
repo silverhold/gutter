@@ -47,6 +47,12 @@
         @return 'rem';
     } @elseif gutter-helper--get-unit($value, 2) == 'em' {
         @return 'em';
+    } @elseif gutter-helper--get-unit($value, 2) == 'vh' {
+        @return 'viewport height';
+    } @elseif gutter-helper--get-unit($value, 2) == 'vw' {
+        @return 'viewport width';
+    } @elseif gutter-helper--get-unit($value, 1) == '%' {
+        @return 'percentage';
     }
 
     @return false;
