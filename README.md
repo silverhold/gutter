@@ -68,3 +68,6 @@ Some observation :
 * If you want to use a decimal multiplier, remove the decimal point like `gutter-p-a-15x-xs`
 * If your decimal multiplier is less than 0, put a 0 in your class. For example a .5 mutlplier class must be `gutter-p-a-05x-xs`
 * You can not write any breakpoint descriminator in your helper class for avoid media queries like `gutter-p-a-15x`.
+
+## Using Gutter Helper with performance
+Gutter Helper can generates a lot of css, and it could be very costly on a performance perspective. In order to fully enjoy gutter helper without any generated classes unused we recommand the usage of [unscss](https://github.com/giakki/uncss)
