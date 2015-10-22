@@ -42,7 +42,7 @@ A scss list that will regroup all the direction that can be generated. For examp
 * `'top'`, `'right'`, `'bottom'` and/or `'left'`
 ##### Default
 ```
-$gutter-helper--directions: ('a', 'x', 'y' 'top', 'right', 'bottom', 'left') !default;
+$gutter-helper--directions: ('a', 'x', 'y', 'top', 'right', 'bottom', 'left') !default;
 ```
 
 #### `$gutter-helper--breakpoints`
