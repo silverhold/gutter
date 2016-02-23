@@ -45,11 +45,11 @@ A scss list that will regroup all the direction that can be generated. For examp
 $gutter-helper--directions: ('a', 'x', 'y', 'top', 'right', 'bottom', 'left') !default;
 ```
 
-#### `$gutter-helper--breakpoints`
-A scss list that will regroup all the breakpoint and the value of the media queries for the responsive classes generated. The key is a string used into the class name as breakpoint name, the value a media querie value for `@media (min-width: {your value})` statement (mobile first philosophy). If you do not want any responsive class to be generated, just set `$gutter-helper--breakpoints` to `false`.
+#### `$gutter-helper-responsive`
+A scss boolean that will generate (if true), responsive helper class based on the [responsive-helper breakpoints](https://github.com/LoicGoyet/responsive-helper). 
 ##### Default
 ```
-$gutter-helper--breakpoints: ('xs': 0, 'sm': 768px, 'md': 992px, 'lg': 1200px) !default;
+$gutter-helper-responsive: true !default;
 ```
 
 ### Use the code
