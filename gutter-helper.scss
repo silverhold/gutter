@@ -17,16 +17,11 @@ $index: 0;
             @include gutter-helper--generator($property, $direction, $multiplier, '');
             $index: $index + 1;
 
-            @if $gutter-helper--breakpoints {
-                @each $breakpoint, $query in $gutter-helper--breakpoints {
-                    @if $query == 0 {
-                        @include gutter-helper--generator($property, $direction, $multiplier, $breakpoint);
+            @if $gutter-helper-responsive {
+                @each $breakpoint-key, $breakpoint-value in $breakpoints {
+                    @include media-query($breakpoint-key, 'mobile-first') {
+                        @include gutter-helper--generator($property, $direction, $multiplier, $breakpoint-key);
                         $index: $index + 1;
-                    } @else {
-                        @media (min-width: $query) {
-                            @include gutter-helper--generator($property, $direction, $multiplier, $breakpoint);
-                            $index: $index + 1;
-                        }
                     }
                 }
             }
