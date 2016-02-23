@@ -4,4 +4,5 @@
  * `sass --watch test/test.scss:test/gutter-helper.css`
  */
 
+@import '../bower_components/responsive-helper/responsive-helper';
 @import '../gutter-helper';
