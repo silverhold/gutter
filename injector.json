@@ -1,0 +1,9 @@
+{
+    "styleutils": [
+        "@bower/responsive-helper/responsive-helper.scss"
+    ],
+
+    "stylevendors": [
+        "@bower/gutter-helper/gutter-helper.scss"
+    ]
+}
