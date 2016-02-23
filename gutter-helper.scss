@@ -1,8 +1,8 @@
-@import 'parameters';
-@import 'str-replace';
-@import 'unit-functions';
-@import 'selectors-generator';
-@import 'rules-generator';
+@import 'partials/parameters';
+@import 'partials/str-replace';
+@import 'partials/unit-functions';
+@import 'partials/selectors-generator';
+@import 'partials/rules-generator';
 
 @mixin gutter-helper--generator($property: 'margin', $direction: '', $multiplier: 1, $breakpoint: '') {
     #{gutter-helper--selector-generator($property, $direction, $multiplier, $breakpoint)} {
