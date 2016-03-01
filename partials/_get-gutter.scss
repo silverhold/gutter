@@ -2,7 +2,7 @@
 // implementation.
 
 @function get-gutter($multiplier: 1) {
-    @if type-of($number) != number {
+    @if type-of($multiplier) != number {
         @return null;
     }
 
