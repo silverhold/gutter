@@ -1,0 +1,14 @@
+// Usefull function to get gutter values without any extend or class
+// implementation.
+
+@function get-gutter($multiplier: 1) {
+    @if type-of($number) != number {
+        @return null;
+    }
+
+    @if not index($gutter-helper--multipliers, $multiplier) {
+        @return null;
+    }
+
+    @return gutter-helper--rule-value($multiplier);
+}
