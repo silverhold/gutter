@@ -1,9 +1,5 @@
 @function gh-get-value($multiplier) {
-    @if gutter-helper--round-level($multiplier) {
-        @return round($gutter-helper--gutter * $multiplier) !important;
-    }
-
-    @return $gutter-helper--gutter * $multiplier !important;
+    @return get-gutter($multiplier) !important;
 }
 
 @mixin gh-get-declaration($property: 'margin', $direction: '', $multiplier: 1, $breakpoint: '') {

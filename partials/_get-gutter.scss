@@ -2,13 +2,19 @@
 // implementation.
 
 @function get-gutter($multiplier: 1) {
+    /// If multiplier params is not a number
     @if type-of($multiplier) != number {
         @return null;
     }
 
+    /// If multiplier is not a part of $gutter-helper--multipliers map
     @if not index($gutter-helper--multipliers, $multiplier) {
         @return null;
     }
 
-    @return gh-get-value($multiplier);
+    $value: $gutter-helper--gutter * $multiplier;
+    @if gh-do-round($gutter-helper--gutter) {
+        $value: round($value);
+    }
+    @return $value;
 }
