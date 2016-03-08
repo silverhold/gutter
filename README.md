@@ -46,7 +46,7 @@ $gutter-helper--directions: ('a', 'x', 'y', 'top', 'right', 'bottom', 'left') !d
 ```
 
 #### `$gutter-helper-responsive`
-A scss boolean that will generate (if true), responsive helper class based on the [responsive-helper breakpoints](https://github.com/LoicGoyet/responsive-helper). 
+A scss boolean that will generate (if true), responsive helper class based on the [responsive-helper breakpoints](https://github.com/LoicGoyet/responsive-helper).
 ##### Default
 ```
 $gutter-helper-responsive: true !default;
@@ -68,6 +68,24 @@ Some observation :
 * If you want to use a decimal multiplier, remove the decimal point like `gutter-p-a-15x-xs`
 * If your decimal multiplier is less than 0, put a 0 in your class. For example a .5 mutlplier class must be `gutter-p-a-05x-xs`
 * You can not write any breakpoint descriminator in your helper class for avoid media queries like `gutter-p-a-15x`.
+
+
+## The `get-gutter()` function
+You can use the `get-gutter()` function that will return a value for depending of the parameter will pass (default value is `1`). This parameter must be a number that is indexed into the the `$gutter-helper--multipliers` map.
+
+```scss
+$gutter-helper--gutter: 30px;
+$gutter-helper--multipliers: (.5, 1, 2);
+
+html {
+    padding-top: get-gutter(2);
+}
+
+// Will compile
+html {
+    padding-top: 60px;
+}
+```
 
 ## Using Gutter Helper with performance
 Gutter Helper can generates a lot of css, and it could be very costly on a performance perspective. In order to fully enjoy gutter helper without any generated classes unused we recommand the usage of [unscss](https://github.com/giakki/uncss)
