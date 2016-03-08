@@ -13,7 +13,7 @@
     }
 
     $value: $gutter-helper--gutter * $multiplier;
-    @if gh-do-round($gutter-helper--gutter) {
+    @if gh-do-round($value) {
         $value: round($value);
     }
     @return $value;
