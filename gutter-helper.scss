@@ -12,13 +12,13 @@
 }
 
 $index: 0;
-@each $multiplier in $gutter-helper--multipliers {
-    @each $direction in $gutter-helper--directions {
-        @each $property in $gutter-helper--properties {
+@each $multiplier in $gh-multipliers {
+    @each $direction in $gh-directions {
+        @each $property in $gh-properties {
             @include gutter-helper--generator($property, $direction, $multiplier, '');
             $index: $index + 1;
 
-            @if $gutter-helper-responsive {
+            @if $gh-responsive {
                 @each $breakpoint-key, $breakpoint-value in $breakpoints {
                     @include media-query($breakpoint-key, 'mobile-first') {
                         @include gutter-helper--generator($property, $direction, $multiplier, $breakpoint-key);

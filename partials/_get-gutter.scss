@@ -7,12 +7,12 @@
         @return null;
     }
 
-    /// If multiplier is not a part of $gutter-helper--multipliers map
-    @if not index($gutter-helper--multipliers, $multiplier) {
+    /// If multiplier is not a part of $gh-multipliers map
+    @if not index($gh-multipliers, $multiplier) {
         @return null;
     }
 
-    $value: $gutter-helper--gutter * $multiplier;
+    $value: $gh-gutter * $multiplier;
     @if gh-do-round($value) {
         $value: round($value);
     }

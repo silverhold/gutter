@@ -7,34 +7,34 @@ Gutter helper is available via bower with the following command
   bower install gutter-helper
 ```
 ## Concept
-Gutter Helper is based on one single value (the `$gutter-helper--gutter variable` located into the `_parameters.scss` file) declinated through multipliers, properties (`margin` and `padding`), directions and responsive breakpoints and compiled as css classes.
+Gutter Helper is based on one single value (the `$gh-gutter variable` located into the `_parameters.scss` file) declinated through multipliers, properties (`margin` and `padding`), directions and responsive breakpoints and compiled as css classes.
 
 ## Usage
 ### Generate the code
 The idea behind Gutter Helper is to fit perfectly to your needs and not generate too much useless css classes. For it you have a bunch of scss variables to set :
 
-#### `$gutter-helper--gutter`
-As mentioned previously, this is the base value for all the helper classes generated
+#### `$gh-gutter`
+As mentioned previously, this is the base value for all the helper classes generated.
 ##### Default
 ```
-$gutter-helper--gutter: 30px !default;
+$gh-gutter: 30px !default;
 ```
 
-#### `$gutter-helper--multipliers`
-A scss list that will regroup all the coefficient used to be multiplied to `$gutter-helper--gutter`, the scss will loop through this list to generate multiplied helpers. Multplier can not be more than 9.9, only one digit behind the decimal point.
+#### `$gh-multipliers`
+A scss list that will regroup all the coefficient used to be multiplied to `$gh-gutter`, the scss will loop through this list to generate multiplied helpers. Multplier can not be more than 9.9, only one digit behind the decimal point.
 ##### Default
 ```
-$gutter-helper--multipliers: (.5, 1, 2) !default;
+$gh-multipliers: (.5, 1, 2) !default;
 ```
 
-#### `$gutter-helper--properties`
+#### `$gh-properties`
 A scss list that will regroup the kind of property that could be generated. The list can only contain 'margin' and/or 'padding'. If you are using `px` units, the decimal for multiplied number will be rounded.
 ##### Default
 ```
-$gutter-helper--properties: ('margin', 'padding') !default;
+$gh-properties: ('margin', 'padding') !default;
 ```
 
-#### `$gutter-helper--directions`
+#### `$gh-directions`
 A scss list that will regroup all the direction that can be generated. For example 'top' will generate class for the specific top direction will property as `margin-top` or `padding-top`. The only accepted value in this list are:
 * `'a'`: for all, will generate for example `margin` or `padding` property (without specific direction)
 * `'x'`: shortcut for `left` & `right`
@@ -42,15 +42,25 @@ A scss list that will regroup all the direction that can be generated. For examp
 * `'top'`, `'right'`, `'bottom'` and/or `'left'`
 ##### Default
 ```
-$gutter-helper--directions: ('a', 'x', 'y', 'top', 'right', 'bottom', 'left') !default;
+$gh-directions: ('a', 'x', 'y', 'top', 'right', 'bottom', 'left') !default;
 ```
 
-#### `$gutter-helper-responsive`
+#### `$gh-responsive`
 A scss boolean that will generate (if true), responsive helper class based on the [responsive-helper breakpoints](https://github.com/LoicGoyet/responsive-helper).
 ##### Default
 ```
-$gutter-helper-responsive: true !default;
+$gh-responsive: true !default;
 ```
+
+#### Deprecated variables
+All the listed variables below are deprecated and replaced by its equivalent referenced. Don't panic, this is just some naming convention fixes, so there is no changes excepted the name of the variable, no feature change.
+
+* `$gutter-helper--gutter` is deprecated and replaced by the `$gh-gutter`
+* `$gutter-helper--multipliers` is deprecated and replaced by the `$gh-multipliers`
+* `$gutter-helper--properties` is deprecated and replaced by the `$gh-properties`
+* `$gutter-helper--directions` is deprecated and replaced by the `$gh-directions`
+* `$gutter-helper-responsive` is deprecated and replaced by the `$gh-responsive`
+
 
 ### Use the code
 Once you have set your variable, you are ready to go and use your classes ! You have follow the pattern below:
@@ -71,11 +81,11 @@ Some observation :
 
 
 ## The `get-gutter()` function
-You can use the `get-gutter()` function that will return a value for depending of the parameter will pass (default value is `1`). This parameter must be a number that is indexed into the the `$gutter-helper--multipliers` map.
+You can use the `get-gutter()` function that will return a value for depending of the parameter will pass (default value is `1`). This parameter must be a number that is indexed into the the `$gh-multipliers` map.
 
 ```scss
-$gutter-helper--gutter: 30px;
-$gutter-helper--multipliers: (.5, 1, 2);
+$gh-gutter: 30px;
+$gh-multipliers: (.5, 1, 2);
 
 html {
     padding-top: get-gutter(2);

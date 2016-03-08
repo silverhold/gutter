@@ -1,5 +1,14 @@
+/// Deprecated variables
 $gutter-helper--gutter: 30px !default;
 $gutter-helper--multipliers: (.5, 1, 2) !default;
 $gutter-helper--properties: ('margin', 'padding') !default;
 $gutter-helper--directions: ('a', 'x', 'y', 'top', 'right', 'bottom', 'left') !default;
 $gutter-helper-responsive: true !default;
+
+/// New variables
+/// thoses has for value the deprecated variables for transition purposes
+$gh-gutter: $gutter-helper--gutter !default;
+$gh-multipliers: $gutter-helper--multipliers !default;
+$gh-properties: $gutter-helper--properties !default;
+$gh-directions: $gutter-helper--directions !default;
+$gh-responsive: $gutter-helper-responsive !default;
