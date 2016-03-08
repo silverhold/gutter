@@ -32,10 +32,6 @@
 }
 
 @function gh-get-selector--complete($property: 'margin', $direction: '', $multiplier: 1, $breakpoint: '') {
-    $selector: '';
-    $selector : $selector + gh-get-selector--property($property);
-    $selector : $selector + gh-get-selector--direction($direction);
-    $selector : $selector + gh-get-selector--multiplier($multiplier);
-    $selector : $selector + gh-get-selector--breakpoint($breakpoint);
+    $selector: gh-get-selector--property($property) + gh-get-selector--direction($direction) + gh-get-selector--multiplier($multiplier) + gh-get-selector--breakpoint($breakpoint);
     @return '.gutter' + $selector + ', ' + '%gutter' + $selector;
 }
