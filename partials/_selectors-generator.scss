@@ -1,4 +1,4 @@
-@function gutter-helper--selector-generator--property($property: 'margin') {
+@function gh-get-selector--property($property: 'margin') {
     @if $property == 'padding' {
         @return '-' + 'p';
     } @else {
@@ -6,7 +6,7 @@
     }
 }
 
-@function gutter-helper--selector-generator--direction($direction: '') {
+@function gh-get-selector--direction($direction: '') {
     @if $direction != '' {
         @return '-' + $direction;
     } @else {
@@ -14,7 +14,7 @@
     }
 }
 
-@function gutter-helper--selector-generator--multiplier($multiplier: 1) {
+@function gh-get-selector--multiplier($multiplier: 1) {
     @if $multiplier != 1 {
         $selector-multiplier: str-replace(inspect($multiplier), '.');
         @return '-' + $selector-multiplier + 'x';
@@ -23,7 +23,7 @@
     }
 }
 
-@function gutter-helper--selector-generator--breakpoint($breakpoint: '') {
+@function gh-get-selector--breakpoint($breakpoint: '') {
     @if $breakpoint != '' {
         @return '-' + $breakpoint;
     } @else {
@@ -31,11 +31,11 @@
     }
 }
 
-@function gutter-helper--selector-generator($property: 'margin', $direction: '', $multiplier: 1, $breakpoint: '') {
+@function gh-get-selector--complete($property: 'margin', $direction: '', $multiplier: 1, $breakpoint: '') {
     $selector: '';
-    $selector : $selector + gutter-helper--selector-generator--property($property);
-    $selector : $selector + gutter-helper--selector-generator--direction($direction);
-    $selector : $selector + gutter-helper--selector-generator--multiplier($multiplier);
-    $selector : $selector + gutter-helper--selector-generator--breakpoint($breakpoint);
+    $selector : $selector + gh-get-selector--property($property);
+    $selector : $selector + gh-get-selector--direction($direction);
+    $selector : $selector + gh-get-selector--multiplier($multiplier);
+    $selector : $selector + gh-get-selector--breakpoint($breakpoint);
     @return '.gutter' + $selector + ', ' + '%gutter' + $selector;
 }

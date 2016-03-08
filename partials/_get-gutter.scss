@@ -10,5 +10,5 @@
         @return null;
     }
 
-    @return gutter-helper--rule-value($multiplier);
+    @return gh-get-value($multiplier);
 }
