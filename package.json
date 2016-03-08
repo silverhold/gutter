@@ -3,7 +3,7 @@
     "description": "Gutter helper is a scss tool designer to quickly generate helpers classes for margin and padding.",
     "main": "gutter-helper.scss",
     "scripts": {
-        "start": "sass --watch test/test.scss:test/test.css",
+        "start": "sass --watch test/test.scss:test/test.css --style expanded",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {

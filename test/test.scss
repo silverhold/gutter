@@ -1,8 +1,5 @@
-/**
- * This file is made to test the color-helper export. To test run the following
- * command :
- * `sass --watch test/test.scss:test/gutter-helper.css`
- */
+$hidden-helpers: false;
+$visible-helpers: false;
 
 @import '../bower_components/responsive-helper/responsive-helper';
 @import '../gutter-helper';
