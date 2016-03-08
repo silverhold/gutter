@@ -31,35 +31,35 @@
     }
 }
 
-@function gutter-helper--get-unit($value, $length-checked) {
+@function gh-get-unit($value, $length-checked) {
     $string: inspect($value);
     $string-length: str-length($string);
     $string-end: str-slice($string, $string-length - ($length-checked - 1), $string-length);
     @return $string-end;
 }
 
-@function gutter-helper--detect-unit($value) {
-    @if gutter-helper--get-unit($value, 2) == 'px' {
+@function gh-detect-unit($value) {
+    @if gh-get-unit($value, 2) == 'px' {
         @return 'pixels';
-    } @elseif gutter-helper--get-unit($value, 2) == 'pt' {
+    } @elseif gh-get-unit($value, 2) == 'pt' {
         @return 'points';
-    } @elseif gutter-helper--get-unit($value, 3) == 'rem' {
+    } @elseif gh-get-unit($value, 3) == 'rem' {
         @return 'rem';
-    } @elseif gutter-helper--get-unit($value, 2) == 'em' {
+    } @elseif gh-get-unit($value, 2) == 'em' {
         @return 'em';
-    } @elseif gutter-helper--get-unit($value, 2) == 'vh' {
+    } @elseif gh-get-unit($value, 2) == 'vh' {
         @return 'viewport height';
-    } @elseif gutter-helper--get-unit($value, 2) == 'vw' {
+    } @elseif gh-get-unit($value, 2) == 'vw' {
         @return 'viewport width';
-    } @elseif gutter-helper--get-unit($value, 1) == '%' {
+    } @elseif gh-get-unit($value, 1) == '%' {
         @return 'percentage';
     }
 
     @return false;
 }
 
-@function gutter-helper--round-level($value) {
-    @if gutter-helper--detect-unit($value) == 'pixels' {
+@function gh-do-round($value) {
+    @if gh-detect-unit($value) == 'pixels' {
         @return true;
     }
 
