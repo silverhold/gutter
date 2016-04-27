@@ -1,10 +1,10 @@
 {
-  "name": "gutter-helper",
-  "homepage": "https://github.com/LoicGoyet/gutter-helper",
+  "name": "trowel-gutter",
+  "homepage": "https://github.com/Trowel/gutter",
   "authors": [
     "Loïc Goyet <loic@appventus.com>"
   ],
-  "description": "Gutter helper is a scss tool designer to quickly generate helpers classes for margin and padding.",
+  "description": "A trowel component to manage spacings",
   "main": "gutter-helper.scss",
   "keywords": [
     "scss",
@@ -21,6 +21,6 @@
     "tests"
   ],
   "dependencies": {
-    "responsive-helper": "^1.1.1"
+    "trowel-responsive": "^1.1.1"
   }
 }
