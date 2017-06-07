@@ -1,10 +1,10 @@
 {
-  "name": "trowel-gutter",
-  "homepage": "https://github.com/Trowel/gutter",
+  "name": "silverhold-gutter",
+  "homepage": "https://github.com/silverhold/gutter",
   "authors": [
     "Loïc Goyet <loic@appventus.com>"
   ],
-  "description": "A trowel component to manage spacings",
+  "description": "A silverhold component to manage spacings",
   "main": "gutter-helper.scss",
   "keywords": [
     "scss",
@@ -21,6 +21,6 @@
     "tests"
   ],
   "dependencies": {
-    "trowel-responsive": "^1.1.1"
+    "silverhold-responsive": "^1.1.1"
   }
 }

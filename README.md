@@ -4,7 +4,7 @@ Gutter helper is a scss tool designer to quickly generate helpers classes for ma
 ## Get started
 Gutter helper is available via bower with the following command
 ```
-bower install trowel-gutter
+bower install silverhold-gutter
 ```
 ## Concept
 Gutter Helper is based on one single value (the `$gh-gutter variable` located into the `_parameters.scss` file) declinated through multipliers, properties (`margin` and `padding`), directions and responsive breakpoints and compiled as css classes.
